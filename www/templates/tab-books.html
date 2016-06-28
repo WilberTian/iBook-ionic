@@ -1,0 +1,18 @@
+<ion-view view-title="Books">
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh ..." on-refresh="getBooklist()">
+    </ion-refresher>
+    <div class="list list-inset">
+	  <div class="item book-item item-text-wrap" ng-repeat="book in booklist">
+	    <a class="book-item-info" href="#/tab/books/{{book.id}}">{{book.title}}</a>
+	    <button class="delete-button" ng-click="delete(book)">
+		  <i class="icon ion-trash-a"></i>
+		</button>
+	  </div>
+	</div>
+  </ion-content>
+</ion-view>
+
+
+<!-- 
+	-->

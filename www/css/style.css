@@ -1,0 +1,17 @@
+
+/* Empty. Add your own CSS if you like */
+
+.book-item {
+	padding: 0px !important;
+}
+.book-item-info {
+	display: inline-block;
+	width: 85%;
+	padding: 16px;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+.search-paging {
+	text-align: center;
+}

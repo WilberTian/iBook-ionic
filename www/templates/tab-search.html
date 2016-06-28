@@ -1,0 +1,28 @@
+<ion-view view-title="Search">
+  <ion-content>
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Search" ng-model="query.queryString">
+        </label>
+        <button class="button button-small" ng-disabled="!query.queryString" ng-click="startSearch()">
+          Search
+        </button>
+      </div>
+      <div class="item item-icon-left item-icon-right">
+        <i class="button icon ion-ios-arrow-back" ng-disabled="query.start < 2" ng-click="back()"></i>
+        <div class="search-paging">Page {{totalPages===0?0:(query.start)}} of {{totalPages}}</div>
+        <i class="button icon ion-ios-arrow-forward" ng-disabled="(totalPages - query.start) <= 0" ng-click="forward($event)"></i>
+      </div>
+    </div>
+
+    <div class="list list-inset">
+      <div class="item book-item item-text-wrap" ng-repeat="book in foundBooklist">
+        <a class="book-item-info" ng-click="showDetail(book)">{{book.title}}</a>
+        <button ng-click="add(book)">
+          <i class="icon ion-ios-plus-empty"></i>
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
