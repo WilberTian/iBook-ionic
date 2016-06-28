@@ -11,7 +11,7 @@
 		      	url: '/books',
 		      	views: {
 		       		'tab-books': {
-		          		templateUrl: 'templates/tab-books.html',
+		          		templateUrl: 'js/book/tab-books.html',
 		          		controller: 'BooklistController'
 		        	}
 		      	}
@@ -20,7 +20,7 @@
 		      	url: '/books/:bookId',
 		      	views: {
 		      	  	'tab-books': {
-		      	    	templateUrl: 'templates/bookdetail.html',
+		      	    	templateUrl: 'js/book/bookdetail.html',
 		      	    	controller: 'BookdetailController'
 		      	  	}
 		      	}

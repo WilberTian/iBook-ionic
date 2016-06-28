@@ -11,7 +11,7 @@
 				url: '/search',
 				views: {
 					'tab-search': {
-					  	templateUrl: 'templates/tab-search.html',
+					  	templateUrl: 'js/search/tab-search.html',
 					  	controller: 'SearchController'
 					}
 				}
@@ -20,7 +20,7 @@
 				url: '/search/:book',
 				views: {
 					'tab-search': {
-					  	templateUrl: 'templates/bookdetail.html',
+					  	templateUrl: 'js/search/bookdetail.html',
 					  	controller: 'SearchdetailController'
 					}
 				}

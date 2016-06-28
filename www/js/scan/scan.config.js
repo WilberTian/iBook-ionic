@@ -11,7 +11,7 @@
 				url: '/scan',
 				views: {
 					'tab-scan': {
-				  		templateUrl: 'templates/tab-scan.html',
+				  		templateUrl: 'js/scan/tab-scan.html',
 				  		controller: 'ScanController'
 					}
 				}
