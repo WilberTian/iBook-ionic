@@ -3,25 +3,25 @@
     <div class="list">
       <div class="item item-input-inset">
         <label class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
           <input type="text" placeholder="Search" ng-model="query.queryString">
         </label>
-        <button class="button button-small" ng-disabled="!query.queryString" ng-click="startSearch()">
+        <button class="button button-small button-calm" ng-disabled="!query.queryString" ng-click="startSearch()">
           Search
         </button>
       </div>
-      <div class="item item-icon-left item-icon-right">
-        <i class="button icon ion-ios-arrow-back" ng-disabled="query.start < 2" ng-click="back()"></i>
+      <div class="item item-button-left item-button-right">
+        <a class="button button-icon ion-ios-arrow-back" ng-disabled="query.start < 2" ng-click="back()"></a>
         <div class="search-paging">Page {{totalPages===0?0:(query.start)}} of {{totalPages}}</div>
-        <i class="button icon ion-ios-arrow-forward" ng-disabled="(totalPages - query.start) <= 0" ng-click="forward($event)"></i>
+        <a class="button button-icon ion-ios-arrow-forward" ng-disabled="(totalPages - query.start) <= 0" ng-click="forward($event)"></a>
       </div>
     </div>
 
     <div class="list list-inset">
       <div class="item book-item item-text-wrap" ng-repeat="book in foundBooklist">
         <a class="book-item-info" ng-click="showDetail(book)">{{book.title}}</a>
-        <button ng-click="add(book)">
-          <i class="icon ion-ios-plus-empty"></i>
-        </button>
+
+        <a class="button button-icon icon ion-ios-plus-empty book-item-btn" ng-click="add(book)"></a>
       </div>
     </div>
   </ion-content>

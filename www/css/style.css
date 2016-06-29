@@ -8,10 +8,35 @@
 	display: inline-block;
 	width: 85%;
 	padding: 16px;
-	vertical-align: middle;
 	text-decoration: none;
+    vertical-align: middle;
+}
+
+.book-item-btn {
+    vertical-align: middle;
 }
 
 .search-paging {
 	text-align: center;
 }
+
+.book-detail-header {
+    font-weight: bold;
+    font-size: 28px;
+    text-align: right;
+    border-bottom: 2px solid #bcaeae;
+    line-height: normal;
+    color: #695353;
+}
+
+.book-detail-info-header {
+    font-size: 14px;
+    text-align: right;
+    border-right: 2px solid #009688;
+    font-weight: bold;
+}
+
+.book-detail-info-data {
+    font-size: 14px;
+}
+

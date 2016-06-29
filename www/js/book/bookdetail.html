@@ -1,17 +1,32 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
 <ion-view view-title="Detail">
   <ion-content>
     <div class="list card">  
-      <div class="item">
-        <h2>{{book.title}}</h2>
-        Publisher: {{book.publisher}} <br/>
-        Author: {{book.author}} <br/>
-        ISBN:{{book.isbn}}<br/>
+      <div class="item item-text-wrap">
+        <div class="book-detail-header">{{book.title}}</div>
+        <div class="row">
+          <div class="col book-detail-info-header">
+            Author
+          </div>
+          <div class="col col-75 book-detail-info-data">
+            {{book.author}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col book-detail-info-header">
+            Publisher
+          </div>
+          <div class="col col-75 book-detail-info-data">
+            {{book.publisher}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col book-detail-info-header">
+            ISBN
+          </div>
+          <div class="col col-75 book-detail-info-data">
+            {{book.isbn}}
+          </div>
+        </div>
       </div>  
       <div class="item item-body">
         <img class="full-image" src="{{book.image}}">
@@ -19,10 +34,7 @@
         <p>
           {{book.summary}}
         </p>
-        <p>
-          <a href="#" class="subdued">1 Like</a>
-          <a href="#" class="subdued">5 Comments</a>
-        </p>
+        
       </div>
     </div>
   </ion-content>
