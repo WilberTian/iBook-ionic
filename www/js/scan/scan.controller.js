@@ -31,10 +31,10 @@
 			            	$scope.detail = detail;
 			            	saveToDatabase(detail, barcodeData);
 			          	}, function(error) {
-			          		alert(error)
+			          		alert(JSON.stringify(error))
 			          	});
 			        }, function (error) {
-			          	alert(error);
+			          	alert(JSON.stringify(error));
 			        });
 	    };
 	}
