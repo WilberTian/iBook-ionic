@@ -26,7 +26,7 @@
 
 		function _performSearch() {
 			$ionicLoading.show({
-		      	template: 'Loading...'
+		      	template: '<ion-spinner icon="android"></ion-spinner>'
 		    }).then(function(){
 		       	console.log('The loading indicator is now displayed');
 		    });
