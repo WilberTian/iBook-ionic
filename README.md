@@ -37,13 +37,14 @@ Use below command to add the platform (Android as an example), for more details 
 ## Screenshots
 
 ### booklist
-![booklist](https://cloud.githubusercontent.com/assets/5880320/16538381/bd7bf79c-4055-11e6-940d-541ba1288e80.png)
+<img alt="booklist" src="https://cloud.githubusercontent.com/assets/5880320/16538381/bd7bf79c-4055-11e6-940d-541ba1288e80.png" width="400px" />
 
 ### book detail
-![bookdetail](https://cloud.githubusercontent.com/assets/5880320/16538437/f95cf68e-4056-11e6-8996-b1476e6e481a.png)
+<img alt="bookdetail" src="https://cloud.githubusercontent.com/assets/5880320/16538437/f95cf68e-4056-11e6-8996-b1476e6e481a.png" width="400px" />
+
 
 ### search book with douban api
-![search](https://cloud.githubusercontent.com/assets/5880320/16538438/f95dbde4-4056-11e6-9dfe-d976254a8254.png)
+<img alt="search" src="https://cloud.githubusercontent.com/assets/5880320/16538438/f95dbde4-4056-11e6-9dfe-d976254a8254.png" width="400px" />
 
 ### scan to add a new book
-![scan](https://cloud.githubusercontent.com/assets/5880320/16538384/bdf9aaac-4055-11e6-8c1b-17c2a3b11d0c.png)
+<img alt="scan" src="https://cloud.githubusercontent.com/assets/5880320/16538384/bdf9aaac-4055-11e6-8c1b-17c2a3b11d0c.png" width="400px" />
