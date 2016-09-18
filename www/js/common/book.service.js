@@ -8,8 +8,14 @@
 	function bookService(dbService) {
 		var self = this;
 
-		self.all = function() {
-			return dbService.query("SELECT id, title, image, publisher, author, isbn, summary FROM iBook")
+		self.all = function(tag) {
+			tag = tag || '';
+
+			var condition = '';
+			if(tag !== '') {
+				condition = "WHERE tags LIKE '%"+tag+"%'";
+			}
+			return dbService.query("SELECT id, title, image, publisher, author, isbn, summary, tags FROM books " + condition)
 				.then(function(result){
 					return dbService.getAll(result);
 				});
@@ -17,25 +23,25 @@
 
 		self.get = function(memberId) {
 			var parameters = [memberId];
-			return dbService.query("SELECT id, title, image, publisher, author, isbn, summary FROM iBook WHERE id = (?)", parameters)
+			return dbService.query("SELECT id, title, image, publisher, author, isbn, summary, tags FROM books WHERE id = (?)", parameters)
 				.then(function(result) {
 					return dbService.getById(result);
 				});
 		};
 
 		self.add = function(member) {
-			var parameters = [member.id, member.title, member.image, member.publisher, member.author, member.isbn, member.summary];
-			return dbService.query("INSERT INTO iBook (id, title, image, publisher, author, isbn, summary) VALUES (?,?,?,?,?,?,?)", parameters);
+			var parameters = [member.id, member.title, member.image, member.publisher, member.author, member.isbn, member.summary, member.tags];
+			return dbService.query("INSERT INTO books (id, title, image, publisher, author, isbn, summary, tags) VALUES (?,?,?,?,?,?,?,?)", parameters);
 		};
 
 		self.remove = function(member) {
 			var parameters = [member.id];
-			return dbService.query("DELETE FROM iBook WHERE id = (?)", parameters);
+			return dbService.query("DELETE FROM books WHERE id = (?)", parameters);
 		};
 
-		self.update = function(origMember, editMember) {
-			var parameters = [editMember.id, editMember.title, origMember.id];
-			return dbService.query("UPDATE iBook SET id = (?), title = (?) WHERE id = (?)", parameters);
+		self.update = function(member) {
+			var parameters = [member.tags, member.id];
+			return dbService.query("UPDATE books SET tags = (?) WHERE id = (?)", parameters);
 		};
 
 		return self;

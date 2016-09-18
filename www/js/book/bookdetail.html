@@ -27,6 +27,14 @@
             {{book.isbn}}
           </div>
         </div>
+        <div class="row">
+          <div class="col book-detail-info-header">
+            Tag 
+          </div>
+          <div class="col col-75 book-detail-info-data">
+            {{book.tags}} <i class="icon ion-ios-pricetag-outline" ng-click="openUpdateTagModal(book)"></i>
+          </div>
+        </div>
       </div>  
       <div class="item item-body">
         <img class="full-image" src="{{book.image}}">
@@ -38,5 +46,23 @@
       </div>
     </div>
   </ion-content>
+
+
+
+  <script id="update-tag-modal.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">Update tag</h1>
+        <button class="button button-clear button-primary" ng-click="cancelUpdateTagModal()">Cancel</button>
+      </ion-header-bar>
+      <ion-content class="padding">
+        <ion-list>
+          <ion-checkbox ng-repeat="tag in tagList" ng-checked="selectedTags.indexOf(tag.title) > -1" ng-click="toggleTag(tag.title)">{{tag.title}}</ion-checkbox>
+        </ion-list>
+
+        <button class="button button-full button-positive" ng-click="updateBookTags(book)">Update</button>
+      </ion-content>
+    </ion-modal-view>
+  </script>
 </ion-view>
 

@@ -36,7 +36,49 @@
     font-weight: bold;
 }
 
+.book-detail-info-data i {
+    font-size: 20px;
+    vertical-align: middle;
+    padding-left: 6px;
+}
+
 .book-detail-info-data {
     font-size: 14px;
 }
 
+.tag-item-container {
+    background-color: aliceblue;
+    padding: 10px;
+}
+
+.tag-item {
+    display: inline-block;
+    padding: 6px;
+    margin: 3px;
+    border-radius: 6px;
+    border: 2px solid #5ea1e5;
+}
+
+.active-tag {
+    background-color: #5ea1e5;
+}
+
+.active-tag .tag-item-title {
+    color: white;
+}
+
+.tag-item-title {
+    font-size: 16px;
+    color: gray;
+    padding-right: 6px;
+}
+
+.tag-operations {
+    float: right;
+}
+
+.tag-operations i {
+    font-size: 24px;
+    padding-left: 10px;
+    cursor: pointer;
+}

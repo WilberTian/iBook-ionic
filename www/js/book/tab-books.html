@@ -1,14 +1,31 @@
-<ion-view view-title="Books">
+<ion-view view-title="{{selectedTag?selectedTag:'All'}}">
+  <ion-nav-buttons side="left">
+    <label class="toggle toggle-positive">
+       <input type="checkbox" ng-click="toggleDisplay()">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+    </label>
+  </ion-nav-buttons>
   <ion-content>
-    <ion-refresher pulling-text="Pull to refresh ..." on-refresh="getBooklist()">
-    </ion-refresher>
-    <div class="list list-inset">
-	  <div class="item book-item item-text-wrap" ng-repeat="book in booklist">
-	    <a class="book-item-info" href="#/tab/books/{{book.id}}">{{book.title}}</a>
-	    
-        <a class="button button-icon icon ion-ios-close book-item-btn" ng-click="delete(book)"></a>
-	  </div>
-	</div>
+    <div class="tag-item-container" ng-show="displayTags">
+      <div class="tag-item" ng-click="filterBooks('')" ng-class="{true: 'active-tag', false: 'inactive'}[selectedTag === '']">
+        <span class="tag-item-title">All</span>
+      </div>
+      <div class="tag-item" ng-repeat="tag in tagList" ng-click="filterBooks(tag.title)" ng-class="{true: 'active-tag', false: 'inactive'}[selectedTag === tag.title]">
+        <span class="tag-item-title">{{tag.title}}</span>
+      </div>
+    </div>
+    <div>
+      <ion-refresher pulling-text="Pull to refresh ..." on-refresh="getBooklist(selectedTag)">
+      </ion-refresher>
+      <div class="list list-inset">
+    	  <div class="item book-item item-text-wrap" ng-repeat="book in booklist">
+    	    <a class="book-item-info" href="#/tab/books/{{book.id}}">{{book.title}}</a>
+          <a class="button button-icon icon ion-ios-close book-item-btn" ng-click="delete(book)"></a>
+    	  </div>
+    	</div>
+    </div>
   </ion-content>
 </ion-view>
 

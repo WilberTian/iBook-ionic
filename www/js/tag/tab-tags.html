@@ -1,0 +1,59 @@
+
+<ion-view view-title="Tags">
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="tags.openTagCreateModal()">
+      Create
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh ..." on-refresh="tags.getTagList()">
+    </ion-refresher>
+    
+    <div class="list">
+      <div class="item" ng-repeat="tag in tags.tagList">
+        <span>{{tag.title}}</span>
+        <div class="tag-operations">
+            <i class="icon ion-ios-compose-outline" ng-click="tags.openTagEditModal(tag)"></i>
+            <i class="icon ion-ios-trash-outline" ng-click="tags.openTagEditModal(tag)"></i>
+        </div>
+      </div>
+    </div>    
+  </ion-content>
+
+  <script id="tag-create-modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title">Create Tag</h1>
+          <button class="button button-clear button-primary" ng-click="tags.cancelTagCreateModal()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Tag title</span>
+              <input ng-model="tag.title" type="text">
+            </label>
+            <button class="button button-full button-positive" ng-click="tags.createTag(tag)">Create</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
+    <script id="tag-edit-modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title">Edit Tag</h1>
+          <button class="button button-clear button-primary" ng-click="tags.cancelTagEditModal()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Tag title</span>
+              <input ng-model="tag.title" type="text">
+            </label>
+            <button class="button button-full button-positive" ng-click="tags.updateTag(tag)">Edit</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+</ion-view>
+

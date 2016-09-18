@@ -7,13 +7,22 @@
 	BooklistController.$inject = [
 		'$scope',
 		'$ionicPopup',
-		'bookService'
+		'$ionicSideMenuDelegate',
+		'bookService',
+		'tagListData'
 	];
 	
 
-	function BooklistController($scope, $ionicPopup, bookService) {
-		$scope.getBooklist = function() {
-			bookService.all().then(function(data){
+	function BooklistController($scope, $ionicPopup, $ionicSideMenuDelegate, bookService, tagListData) {
+		$scope.toggleLeft = function() {
+		    $ionicSideMenuDelegate.toggleLeft();
+		};
+
+		$scope.tagList = tagListData;
+		$scope.selectedTag = '';
+
+		$scope.getBooklist = function(tag) {
+			bookService.all(tag).then(function(data){
 				$scope.booklist = data;
 				$scope.$broadcast('scroll.refreshComplete');
 			}, function(error) {
@@ -42,7 +51,17 @@
 			showConfirm(book);
 	    };
 
-		$scope.getBooklist();
+	    $scope.displayTags = false;
+	    $scope.toggleDisplay = function() {
+	    	$scope.displayTags = !$scope.displayTags;
+	    }
+
+	    $scope.filterBooks = function(tag) {
+	    	$scope.selectedTag = tag;
+	    	$scope.getBooklist(tag);
+	    }
+
+		$scope.getBooklist("");
 	}
 
-})();
+})()

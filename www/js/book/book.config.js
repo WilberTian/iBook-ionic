@@ -12,7 +12,12 @@
 		      	views: {
 		       		'tab-books': {
 		          		templateUrl: 'js/book/tab-books.html',
-		          		controller: 'BooklistController'
+		          		controller: 'BooklistController',
+		          		resolve: {
+                            tagListData: function (tagService) {
+                                return tagService.all();
+                            }
+                        }
 		        	}
 		      	}
 		    })
@@ -21,7 +26,12 @@
 		      	views: {
 		      	  	'tab-books': {
 		      	    	templateUrl: 'js/book/bookdetail.html',
-		      	    	controller: 'BookdetailController'
+		      	    	controller: 'BookdetailController',
+		      	    	resolve: {
+                            tagListData: function (tagService) {
+                                return tagService.all();
+                            }
+                        }
 		      	  	}
 		      	}
 		    })

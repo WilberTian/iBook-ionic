@@ -3,6 +3,7 @@
 		.module('iBook', [
 			'ionic', 
 			'iBook.book',
+			'iBook.tag',
 			'iBook.search',
 			'iBook.common',
 			'iBook.scan',
@@ -27,8 +28,9 @@
 	          	} else {
 	          	  	dbHandler.db = window.openDatabase("iBook.db", "1.0", "iBook", -1);
 	          	}
-	          	
-	          	$cordovaSQLite.execute(dbHandler.db, "CREATE TABLE IF NOT EXISTS iBook (id integer primary key, title text, image text, publisher text, author text, isbn text, summary text)");
+
+	          	$cordovaSQLite.execute(dbHandler.db, "CREATE TABLE IF NOT EXISTS books (id integer primary key, title text, image text, publisher text, author text, isbn text, summary text, tags text)");
+	          	$cordovaSQLite.execute(dbHandler.db, "CREATE TABLE IF NOT EXISTS tags (id integer primary key, title text)");
 	        });
 		})
 })();
