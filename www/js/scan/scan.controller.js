@@ -17,7 +17,8 @@
 		        publisher: data.publisher,
 		        author: data.author,
 		        summary: data.summary,
-		        isbn: barcodeData.text
+		        isbn: barcodeData.text,
+		        tags: ''
 	      	});
 	    }
 		

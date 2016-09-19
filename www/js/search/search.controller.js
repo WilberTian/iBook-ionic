@@ -50,6 +50,7 @@
 			var result = book;
 			result.image = result.images.large;
 			result.isbn = result.isbn13;
+			result.tags= '';
 			return result;
 		}
 

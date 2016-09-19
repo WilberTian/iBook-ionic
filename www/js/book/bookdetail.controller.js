@@ -58,7 +58,9 @@
 
 	    $scope.openUpdateTagModal = function(book) {
 	    	$scope.updateTagModal.scope.book = book;
-	    	$scope.updateTagModal.scope.selectedTags = book.tags && book.tags.split(',');
+	    	console.log(book)
+	    	$scope.updateTagModal.scope.selectedTags = (book.tags === '') ? [] : book.tags.split(',');
+
 			$scope.updateTagModal.show();
 	    }
 

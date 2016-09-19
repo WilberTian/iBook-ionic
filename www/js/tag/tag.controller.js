@@ -82,15 +82,16 @@
         }
 
         function _openTagCreateModal() {
+            vm.tagCreateModal.scope.tag = {};
             vm.tagCreateModal.show();
         }
 
-        function _cancelTagCreateModal() {
+        function _cancelTagCreateModal() {   
             vm.tagCreateModal.hide();
         }
 
         function _openTagEditModal(tag) {
-            vm.tagEditModal.scope.tag = tag;
+            vm.tagEditModal.scope.tag = angular.copy(tag);
             vm.tagEditModal.show();
         }
 
