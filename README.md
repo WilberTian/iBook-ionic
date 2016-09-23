@@ -37,14 +37,18 @@ Use below command to add the platform (Android as an example), for more details 
 ## Screenshots
 
 ### booklist
-<img alt="booklist" src="https://cloud.githubusercontent.com/assets/5880320/16538381/bd7bf79c-4055-11e6-940d-541ba1288e80.png" width="400px" />
+<img alt="booklist" src="https://cloud.githubusercontent.com/assets/5880320/18786265/aa321098-81cf-11e6-80bb-caf772704b9a.jpeg" width="400px" />
 
 ### book detail
-<img alt="bookdetail" src="https://cloud.githubusercontent.com/assets/5880320/16538437/f95cf68e-4056-11e6-8996-b1476e6e481a.png" width="400px" />
+<img alt="bookdetail" src="https://cloud.githubusercontent.com/assets/5880320/18786305/c6a0e3ee-81cf-11e6-961c-120481d95622.jpeg" width="400px" />
+
+
+### book tag
+<img alt="bookdetail" src="https://cloud.githubusercontent.com/assets/5880320/18786323/e3efb3e4-81cf-11e6-9465-0b0eae2a725d.png" width="400px" />
 
 
 ### search book with douban api
-<img alt="search" src="https://cloud.githubusercontent.com/assets/5880320/16538438/f95dbde4-4056-11e6-9dfe-d976254a8254.png" width="400px" />
+<img alt="search" src="https://cloud.githubusercontent.com/assets/5880320/18786360/0e840862-81d0-11e6-9675-6fc2dc381c76.jpeg" width="400px" />
 
 ### scan to add a new book
-<img alt="scan" src="https://cloud.githubusercontent.com/assets/5880320/16538384/bdf9aaac-4055-11e6-8c1b-17c2a3b11d0c.png" width="400px" />
+<img alt="scan" src="https://cloud.githubusercontent.com/assets/5880320/18786377/248f3136-81d0-11e6-955b-09996e68251f.png" width="400px" />
